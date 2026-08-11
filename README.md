@@ -149,3 +149,15 @@ credentials через `id_tokens` та `aws sts assume-role-with-web-identity`
    `Succeeded` для обох кроків.
 3. Push у гілку `lesson-10` тригерить job `train-model` у GitLab CI, і в
    AWS Console видно нове виконання Step Function з `source: "gitlab-ci"`.
+
+## Скріншоти виконання (docs/screenshots/)
+
+Підтвердження виконаних критеріїв прийняття, зроблене через AWS CLI / Terraform CLI:
+
+| Файл | Критерій |
+|---|---|
+| [`01-step-function.png`](docs/screenshots/01-step-function.png) | Step Function `ValidateData → LogMetrics`, статус `ACTIVE`, тестове виконання `SUCCEEDED` |
+| [`02-lambda-functions.png`](docs/screenshots/02-lambda-functions.png) | Дві Lambda-функції задеплоєні, `.zip`-архіви присутні в `terraform/lambda/` |
+| [`03-terraform.png`](docs/screenshots/03-terraform.png) | `terraform apply` — 9 ресурсів створено; `terraform state list` |
+| [`04-gitlab-ci.png`](docs/screenshots/04-gitlab-ci.png) | Вміст `.gitlab-ci.yml`; гілку `lesson-10` запушено в GitLab |
+| [`05-project-structure.png`](docs/screenshots/05-project-structure.png) | Структура проєкту та README.md |
